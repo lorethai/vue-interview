@@ -14,10 +14,6 @@ import { ref, inject, computed } from 'vue'
 
 export default {
   props: {
-    active: {
-      type: Boolean,
-      default: false
-    },
     title: String,
     placeholder: String,
     payment: Number,

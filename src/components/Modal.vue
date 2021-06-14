@@ -4,19 +4,19 @@
       <div class="payment-state" :class="{success: isPaymentMatch, fail: !isPaymentMatch}">
         {{isPaymentMatch ? 'Success!' : 'Fail!'}}
       </div>
-      <p>Maximum offer was: <strong>{{employer}}</strong></p>
-      <p>Minimum offer was: <strong>{{employee}}</strong></p>
+      <p class="employer">Maximum offer was: <strong>{{employer}}</strong></p>
+      <p class="employee">Minimum offer was: <strong>{{employee}}</strong></p>
 
       <div class="weather">
         <p v-if="loadingWeather">Loading weather for {{cityToLoadWeatherFor}}</p>
         <div v-else>
           <p>Weather in {{cityToLoadWeatherFor}} is:</p>
           <strong>{{weatherData.desc}}</strong>
-          <strong>{{weatherData.temp}}</strong>
+          <strong class="temp">{{weatherData.temp}}</strong>
           <button @click="loadWeatherForCity(cityToLoadWeatherFor)">refresh weather data</button>
         </div>
       </div>
-      <button @click="closeModal">Close</button>
+      <button class="close" @click="closeModal">Close</button>
     </div>
   </div>
 </template>
