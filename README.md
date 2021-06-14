@@ -5,4 +5,5 @@
 * Navigate to the root of this project
 * Run `yarn` to install dependencies
 * Run `yarn dev` to run a dev version of this app
+* Run `yarn test` to run tests
 * _Least but not last, enjoy :)_
