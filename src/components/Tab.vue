@@ -3,7 +3,7 @@
     <h4 v-if="isDefaultPayment">You are entering your proposal as: {{title}}</h4>
     <h4 v-else>{{title}} accepted: {{payment}}</h4>
     <div>
-      <input type="text" v-if="isDefaultPayment" v-model="salary" @keyup.enter="confirmSalary">
+      <input type="text" v-if="isDefaultPayment" v-model="salary" @keyup.enter="confirmSalary" :placeholder="placeholder">
       <button @click="confirmSalary" :disabled="!isDefaultPayment">Confirm</button>
     </div>
   </div>
@@ -19,6 +19,7 @@ export default {
       default: false
     },
     title: String,
+    placeholder: String,
     payment: Number,
   },
   setup (props, { emit }) {
@@ -26,7 +27,7 @@ export default {
     const isTabActive = computed(() => activeTab.value === props.title)
     const isDefaultPayment = computed (() => props.payment === null || props.payment === 0)
 
-    const salary = ref(0)
+    const salary = ref(null)
 
     const confirmSalary = function () {
       if (salary.value > 0) {

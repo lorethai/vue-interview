@@ -1,9 +1,9 @@
 <template>
   <tabs>
-    <tab title="Employer" v-model:payment="salaryByEmployer"></tab>
-    <tab title="Employee" v-model:payment="salaryByEmployee"></tab>
+    <tab title="Employer" v-model:payment="salaryByEmployer" placeholder="Enter maximum offer"></tab>
+    <tab title="Employee" v-model:payment="salaryByEmployee" placeholder="Enter minimum offer"></tab>
   </tabs>
-  <modal v-if="bothSalariesEntered" @close="resetSalaries"></modal>
+  <modal v-if="bothSalariesEntered" @close="resetSalaries" :employer="salaryByEmployer" :employee="salaryByEmployee"></modal>
 </template>
 
 <script>
